@@ -1,0 +1,42 @@
+智能体重指数分类器
+def bmi_classwork ():
+    try:
+       height = float(input('请输入你的身高(m):'))
+       weight = float(input('请输入你的体重(kg):'))
+       bmi = weight / (height ** 2)
+       if bmi < 18.5:
+         mangory = '体重偏轻'
+       elif 18.5 <= bmi < 24:
+         mangory = '体重正常'
+       elif 24 <= bmi < 28:
+         mangory = '体重超重'
+       else:
+         mangory = '肥胖'
+       print(f'你的BMI值是：{bmi}，状态属于：{mangory}')
+    except:
+       print('输入数据有误，请重新输入！')
+bmi_classwork() 
+
+24小时制时间转换器
+def time_zhuan():
+   try:
+      hour = int(input('请输入小时数，范围在0-23之间:'))
+      minute = int(input('请输入分钟数，范围在0-59之间:'))
+      if not (0 <= hour <= 23 and 0 <= minute <= 59):
+         print('不合法的时间数字！')
+         return
+      #判断当前时间是上午（AM）还是下午（PM）：
+      if hour < 12:
+         ptime = 'AM'        
+      else:
+         ptime = 'PM'
+      #转换时间：
+      if 0 <= hour <= 11:
+         hour = hour
+         
+      elif 12 <= hour <= 23:
+         hour = hour - 12
+      print(f'{hour}:{minute} {ptime}')
+   except:
+      print('请输入整数')
+time_zhuan()
